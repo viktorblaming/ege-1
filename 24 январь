@@ -1,0 +1,9 @@
+s=open('24.txt').readline()
+for i in 'AEIOUY':
+    s=s.replace(i,'A')
+a=[s.index for i in s]
+a=[-1]+[i for i in range(len(s)) if s[i]=='A']+[len(s)-1]
+m=0 
+for i in range(2,len(a)):
+    m=max(a[i]-a[i-2],m)
+print(m)
